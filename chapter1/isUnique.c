@@ -19,8 +19,6 @@
  */
 int main(int argc, char *argv[]){
 
-    char *ptr_one;
-    char *ptr_two;
     char *input_string = argv[1];
 
     int counter_one;

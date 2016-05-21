@@ -39,5 +39,53 @@ int main(int argc, char *argv[])
             printf("\t");
         }
     }
+    printf("\n\n\n");
 
+
+    /////////////////////////////
+    ///// ROTATE THE MATRIX /////
+    /////////////////////////////
+    int dimension = matrixDimension;
+    int outputMatrix[dimension][dimension];
+
+    // IDEA:
+    // row1 = colN
+    // row2 = colN-1
+    // .
+    // .
+    // .
+    // Until N=0
+    int fromRow = 0;
+    int fromCol = 0;
+    int toRow = 0;
+    int toCol = dimension-1;
+
+    while(toCol>-1)
+    {
+        // fill in the nth column
+        for(toRow=0; toRow<dimension; toRow++) {
+            //printf("fromCol = %d\n", fromCol);
+            //printf("fromRow = %d\n\n", fromRow);
+            //printf("fromCol = %d\n", toCol);
+            //printf("fromRow = %d\n\n", toRow);
+
+            outputMatrix[toRow][toCol] = myMatrix[fromRow][fromCol];
+            fromCol++;
+        }
+
+        fromCol=0;
+        fromRow++;
+        toCol -= 1;
+    }
+
+    // print the matrix
+    //int i;
+    //int j;
+    for(i=0;i<dimension; i++){
+        printf("\n");
+        for(j=0; j<dimension; j++){
+            printf("%d", outputMatrix[i][j]);
+            printf("\t");
+        }
+    }
 }

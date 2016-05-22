@@ -10,6 +10,8 @@
  * isSubstring()."
  *
  * Ex:  "waterbottle" is a rotation of "erbottlwat"
+ *
+ * Notes: We can use strstr("Longer string", "substring") for this, in C
  */
 
 #include <stdlib.h>
@@ -18,5 +20,19 @@
 
 int main(int argc, char *argv[])
 {
-    // code here
+    // get the command line args
+    char *fullString = argv[1];
+    char *subString = argv[2];
+
+    // concat the first string with itself
+    char concatString[(2*strlen(fullString))];
+    strcat(concatString, fullString);
+    strcat(concatString, fullString);
+    //printf("Confirm string concatted with itself: %s", concatString);
+
+    if (strstr(concatString, subString))
+        printf("String Rotation Found\n");
+    else
+        printf("String rotation NOT found\n");
+
 }

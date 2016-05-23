@@ -7,4 +7,4 @@
 
 ### Notes
 - Work in progress
-- If the question doesn't specify it, I won't be implementing known algorithms or data structures from scratch. Whenever open source versions of data structures/algorithms are used, I give credit where it's due, and note that appropriately.
+- Rolling my own data structures for this... I explored a few other other libraries, but I'd rather spend my time writing code than reading documentation and fiddling around

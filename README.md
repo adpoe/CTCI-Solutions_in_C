@@ -8,4 +8,3 @@
 ### Notes
 - Work in progress
 - If the question doesn't specify it, I won't be implementing known algorithms or data structures from scratch. Whenever open source versions of data structures/algorithms are used, I give credit where it's due, and note that appropriately.
-- So far, I'm pulling from: https://github.com/srdja/Collections-C -- (thanks srdja and all contributors!)

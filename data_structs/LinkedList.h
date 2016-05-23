@@ -15,6 +15,14 @@ struct DoublyLinkedList {
     int n;
 };
 
-int foo(int x);  /* An example function declaration */
+
+void initNode(Node *Node);
+void initDList(DoubleyLinkedList *DList);
+boolean isEmpty(DoubleyLinkedList *DList);
+void add(DoubleyLinkedList *DList, void *item);
+Node* createIterator(DoubleyLinkedList *DList)
+void removeNode(DoubleyLinkedList *DList, Node *removeNode);
+void printListInts(DoubleyLinkedList *DList);
+
 
 #endif // LINKEDLIST_H_

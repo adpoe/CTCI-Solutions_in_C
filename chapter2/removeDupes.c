@@ -14,8 +14,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "../data_structs/LinkedList.h"
 
 int main(int argc, char *argv[])
 {
     // code here
+    DoubleyLinkedList *DList;
 }

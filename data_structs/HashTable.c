@@ -52,9 +52,44 @@ int hash(HashTable *HT, void *key) {
 
 void resize(HashTable *HT, int capacity) {
     // code here
+    HashTable *tempHash = malloc( sizeof(HashTable) );
+
+    // free the temporary hash
+    free(tempHash);
 }
+
 void put(HashTable *HT, char *key, void *value) {
     // code here
+    if (key == NULL) {
+        printf("key value is NULL");
+        return;
+    }
+
+    if (value == NULL) {
+        deleteKey(HT, key);
+        return;
+    }
+
+    // double table size if 50% full
+    if(HT->N >= HT->M/2)
+        resize(HT, (2*HT->M));
+
+    // check if the hash value is already represented
+    int i;
+    for (i = hash(HT, key); HT->keys[i] !=NULL; i = (i + 1) % HT->M) {
+        // if we find the key after indexing by the hashed value
+        if (strcmp(HT->keys[i], key) == 0) {
+            HT->values[i] = value;
+            return;
+        }
+    }
+
+    // otherwise, we put it in for the first time
+    HT->keys[i] = key;
+    HT->values[i] = value;
+    HT->N++;
+    return;
+
 }
 
 void* get(HashTable *HT, char *key) {
@@ -84,5 +119,6 @@ int main(int argc, char* argv[]) {
     myValTwo = &testIntTwo;
     myHashTwo = hash(myHT, myValTwo);
     printf("MyHash=%d\n", myHashTwo);
+
 
 }

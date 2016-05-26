@@ -61,7 +61,7 @@ void resize(HashTable *HT, int capacity) {
 void put(HashTable *HT, char *key, void *value) {
     // code here
     if (key == NULL) {
-        printf("key value is NULL");
+        printf("key value is NULL\n");
         return;
     }
 
@@ -84,15 +84,36 @@ void put(HashTable *HT, char *key, void *value) {
         }
     }
 
+    //int keyValue = hash(HT, key);
     // otherwise, we put it in for the first time
     HT->keys[i] = key;
     HT->values[i] = value;
     HT->N++;
+
+    printf("Hash value, i=%d\n", i);
+    printf("HT->values[keyValue] = %d\n", *(int *)HT->values[i] );
     return;
 
 }
 
 void* get(HashTable *HT, char *key) {
+    if (NULL == key) {
+         printf("key value is null");
+         return NULL;
+    }
+
+    printf("Inside get\n");
+    // index into the hash table via linear probing
+    int i;
+    for (i=hash(HT, key); HT->keys[i] != NULL; i = (i + 1) % HT->M) {
+        if (HT->keys[i] == key) {
+            printf("FROM GET:  hash_key, i=%d, >> HT->values[i] = %d\n", i, *(int *)HT->values[i] );
+            return HT->values[i];
+        }
+    }
+    printf("didn't find a match\n");
+
+    // if we don't find a match, then return NULL
     return NULL;
 }
 
@@ -119,6 +140,40 @@ int main(int argc, char* argv[]) {
     myValTwo = &testIntTwo;
     myHashTwo = hash(myHT, myValTwo);
     printf("MyHash=%d\n", myHashTwo);
+
+
+    // test put and get
+    int putValOne, putValTwo;
+    char *putKeyOne, *putKeyTwo;
+    void *value_one_ptr;
+    void *value_two_ptr;
+
+
+    putKeyOne = "One";
+    putKeyTwo = "Two";
+
+    putValOne = 99;
+    putValTwo = 44;
+
+    value_one_ptr = &putValOne;
+    value_two_ptr = &putValTwo;
+
+    // PUT
+    put(myHT, putKeyOne, value_one_ptr);
+    put(myHT, putKeyTwo, value_two_ptr);
+    printf("made it past put\n");
+
+    // GET
+    void *return_one_ptr = malloc( sizeof(void *) );
+    void *return_two_ptr = malloc( sizeof(void *) );
+    return_one_ptr = get(myHT, putKeyOne);
+    return_two_ptr = get(myHT, putKeyTwo);
+    printf("made it past get\n");
+
+    printf("size of int = %d, size of void * = %d\n",(int)sizeof(int), (int)sizeof(void*));
+
+    printf("Return Value One: %d\n", *(int *)return_one_ptr);
+    printf("Return Value Two: %d\n", *(int *)return_two_ptr);
 
 
 }

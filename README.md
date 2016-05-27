@@ -7,4 +7,22 @@
 
 ### Notes
 - Work in progress
-- Rolling my own data structures for this... I explored a few other other libraries, but I'd rather spend my time writing code than reading documentation and fiddling around
+- Currently looking for a reliable set of data structures to use. Was rolling my own for awhile, that started turning into a separate project.
+- Right now considering Collections C, from *srdja*: https://github.com/srdja/Collections-C/tree/master/src
+    * These have what look like a solid API documentation at: http://blog.srdja.me/Collections-C/#introduction
+- Open to suggestions if anyone has any
+- Also decided to try using Zed Shaw's Debug Macros to make debugging simpler (hopefully...)
+    * These are online at: http://c.learncodethehardway.org/book/ex20.html
+
+## Thoughts, Questions, and Stuff I've Learned
+- GDB isn't a bad debugger (when I was first forced to use it for class, I really disliked it), mostly because  using the -tui option will give you a really simple GUI.
+    * Why doesn't anybody tell you this up front?
+- DDD is awesome for visualizing data structures, but wish there was an easier way to work on the code directly, and compile, even within the GDB window, like a true IDE. People complain about the 90s-looking interface, but I kind of like. Maybe just nostalgia.
+- CLion is a great C IDE. But using it feels a bit like cheating, mostly because it doesn't seem practical for a real world environment.
+- Is Emacs really that much better than vim for C programming?
+- I'm considering using the LLVM system, but one step at a time.
+- Using void * pointers to allow for generic types is a great idea in theory, but a serious pain in practice. Though, I probably just need more practice.
+- Complex data structures that have arrays should be defined as type * *  in the header file. Not * type[SIZE], because these can't be malloc'd later
+- DON'T try to build your own data structures in C, unless it's absolutely necessary. Or that data structure library is the main project. That way lies madness.
+- Writing C is painful. Or maybe Python has just made me soft.
+

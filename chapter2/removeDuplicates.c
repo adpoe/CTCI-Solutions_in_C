@@ -14,18 +14,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "../data_structs/LinkedList.h"
-#include "../data_structs/hash.c"
+#include "../data_structs/SList.c"
+#include "../data_structs/HashMap.c"
 
 int main(int argc, char *argv[])
 {
-    // create the list, add at least one dupe, a list of strings
-
-    // create a hash map
-
-    // iterate through the list, and add each item to the hashmap
-
-    // if a match, delete it from the list
-
-
+    // code here
 }

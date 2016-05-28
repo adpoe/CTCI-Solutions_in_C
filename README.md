@@ -11,3 +11,5 @@
 - Ideally would like to build my own library of C structures for the future, but that's a longterm thing, so I'm open to other options until then.
 - Decided to try using Zed Shaw's Debug Macros to make debugging simpler (hopefully...)
     * These are online at: http://c.learncodethehardway.org/book/ex20.html
+- Also reading through this for tips, and trying out some of the data structures
+    * http://www.cs.yale.edu/homes/aspnes/classes/223/notes.pdf

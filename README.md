@@ -3,9 +3,13 @@
 
 ### Why would anyone do this
 - Good practice
-- Have not yet found a full solution in set in C, so hopefully this helps someone else too
+- Have not yet found many (if any) solutions written set in C, so hopefully this helps someone else too
+- I may jump around and do the exercises that look fun. By the end of chapter 2, I realized a lot this is good practice... but repetitive, at least in these intro chapters. Thinking that moderate/hard chapters will certainly be a challenge though.
+
 
 ### Notes
+- Update:  Started jumping around and focusing mostly on what interested me after about exercise 2.5 in chapter 2. Would happily accept pull requests to any exercises I haven't done to date.
+    * Originally planned to chug through every exercise, but was getting a little repetitive, and nothing I haven't seen before, at least early on.
 - Work in progress, but doing it as time arises
 - Currently looking for a reliable set of data structures to use. Was rolling my own for awhile, but that started turning into a separate project. And while very interesting, it was too time consuming for now.
 - Ideally would like to build my own library of C structures for the future, but that's a longterm thing, so I'm open to other options until then.
